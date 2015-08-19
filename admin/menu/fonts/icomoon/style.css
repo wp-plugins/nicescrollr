@@ -23,45 +23,22 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home:before {
-	content: "\e600";
-}
-.icon-keyboard:before {
-	content: "\e601";
-}
-.icon-display:before {
+.icomoon-display:before {
 	content: "\e602";
 }
-.icon-wrench:before {
-	content: "\e603";
-}
-.icon-equalizer:before {
+
+.icomoon-equalizer:before {
 	content: "\e604";
 }
-.icon-equalizer2:before {
-	content: "\e605";
+
+.icomoon-power-cord:before {
+	content: "\e600";
 }
-.icon-cog:before {
-	content: "\e606";
-}
-.icon-cogs:before {
-	content: "\e607";
-}
-.icon-hammer:before {
-	content: "\e608";
-}
-.icon-paragraph-justify:before {
+
+.icomoon-paragraph-justify:before {
 	content: "\e609";
 }
-.icon-github4:before {
-	content: "\e60a";
-}
-.icon-github5:before {
-	content: "\e60b";
-}
-.icon-wordpress:before {
+
+.icomoon-wordpress:before {
 	content: "\e60c";
-}
-.icon-wordpress2:before {
-	content: "\e60d";
 }

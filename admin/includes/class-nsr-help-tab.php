@@ -61,7 +61,7 @@ class nsr_help_tab {
 		// We do only add the help tab on the plugin options page.
 		if( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'nicescrollr_settings') {
 
-			add_action( "load-{$GLOBALS['pagenow']}", array( $this, 'add_tabs' ), 20 );
+			add_action( "load-{$GLOBALS['pagenow']}", array( $this, 'add_nsr_help_tab' ), 15 );
 		}
 	}
 
@@ -72,7 +72,7 @@ class nsr_help_tab {
 	 * @since  0.1.0
 	 * @return mixed | void
 	 */
-	public function add_tab() {
+	public function add_nsr_help_tab() {
 
 		foreach ( $this->tabs as $id => $data ) {
 
@@ -97,7 +97,7 @@ class nsr_help_tab {
 
 		$html = '<p>' . __( "This plugin integrates the Nicescroll jQuery plugin into your website.", $this->keys['plugin_domain'] ) . '</p>';
 
-		$html .= '<p>' . __( "For help regarding Nicescroll itself, please refer to it's <a href='http://areaaperta.com/nicescroll/' target='_blank'>official homepage</a>.", $this->keys['plugin_domain'] ) . '</p>';
+		$html .= '<p>' . __( "For help regarding Nicescroll itself, please refer to the <a href='http://areaaperta.com/nicescroll/' target='_blank'>official Nicescroll homepage</a>.", $this->keys['plugin_domain'] ) . '</p>';
 
 		$html .= '<br />';
 
@@ -105,7 +105,7 @@ class nsr_help_tab {
 
 		$html .= '<p>' . __( "Also, there is the scrollTo library included with this plugin. This makes it easy for you to navigate to those input fields that didn't pass validation. You can disable it on the 'Plugin' settings page.", $this->keys['plugin_domain'] ) . '</p>';
 
-		$html .= '<p>' . __( "If you have any questions, comments or issues regarding this plugin, please visit the <a href='#'>plugin homepage</a>.", $this->keys['plugin_domain'] ) . '</p>';
+		$html .= '<p>' . __( "If you have any questions, comments or issues regarding this plugin, please visit the <a href='https://wordpress.org/plugins/nicescrollr/' target='_blank'>plugin homepage</a>.", $this->keys['plugin_domain'] ) . '</p>';
 
 		return $html;
 	}

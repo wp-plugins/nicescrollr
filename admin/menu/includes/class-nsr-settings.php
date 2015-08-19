@@ -347,10 +347,11 @@ class nsr_settings {
 		$title      = $args['title'];
 		$section    = $args['section'];
 
-		$html = '<p class="nsr-input-container">';
-		$html .= '<input type="checkbox" title="' . $title . '" id="' . $option_key . '" class="nsr-switch nsr-input-checkbox" name="' . $this->keys['option_group'] . '[' . $option_key . ']" value="1" ' . checked( 1, isset( $options[ $section ][ $option_key ] ) ? $options[ $section ][ $option_key ] : 0, false ) . '></input>';
-		$html .= '<div class="nsr-switch-container"></div>';
-		$html .= '</p>';
+		$html = '<label class="nsr-switch label-for-nsr-switch" title="' . $title . '">';
+		$html .= '<input type="checkbox" id="' . $option_key . '" class="nsr-switch-input nsr-input-checkbox" name="' . $this->keys['option_group'] . '[' . $option_key . ']" value="1" ' . checked( 1, isset( $options[ $section ][ $option_key ] ) ? $options[ $section ][ $option_key ] : 0, false ) . '></input>';
+		$html .= '<span class="nsr-switch-label" data-on="On" data-off="Off"></span>';
+		$html .= '<span class="nsr-switch-handle"></span>';
+		$html .= '</label>';
 
 		echo $html;
 	}
@@ -393,7 +394,7 @@ class nsr_settings {
 		$section    = $args['section'];
 
 		$html = '<p class="nsr-input-container">';
-		$html .= '<input type="text"  id="' . $option_key . '" title="' . $title . '" name="' . $this->keys['option_group'] . '[' . $option_key . ']" Placeholder="' . $this->default_options[ $option_key ] . '" value="' . $options[ $section ][ $option_key ] . '" class="' . $option_key . ' nsr-color-picker nsr-input-color-picker"></input>';
+		$html .= '<input type="text" id="' . $option_key . '" title="' . $title . '" name="' . $this->keys['option_group'] . '[' . $option_key . ']" Placeholder="' . $this->default_options[ $option_key ] . '" value="' . $options[ $section ][ $option_key ] . '" class="' . $option_key . ' nsr-color-picker nsr-input-color-picker"></input>';
 		$html .= '</p>';
 
 		echo $html;
@@ -423,10 +424,10 @@ class nsr_settings {
 		$select_values = $args['select_values'];
 
 		$html = '<p class="nsr-input-container">';
-		$html .= '<select name="' . $this->keys['option_group'] . '[' . $option_key . ']" class="floating-element fancy-select nsr-fancy-select nsr-input-select" id="' . $option_key . '">';
+		$html .= '<select title="' . $title . '" name="' . $this->keys['option_group'] . '[' . $option_key . ']" class="floating-element fancy-select nsr-fancy-select nsr-input-select" id="' . $option_key . '">';
 		foreach ( $select_values as $value ) {
 
-			$html .= '<option title="' . $title . '" value="' . $value . '"' . selected( $options[ $section ][ $option_key ], $value, false ) . '>' . $value . '</option>';
+			$html .= '<option value="' . $value . '"' . selected( $options[ $section ][ $option_key ], $value, false ) . '>' . $value . '</option>';
 		}
 		$html .= '</select>';
 		$html .= '</p>';

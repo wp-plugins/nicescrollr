@@ -10,6 +10,8 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
+
+
 .wrap h2.nsr-page-title:not(.nav-tab-wrapper) {
     font-family: 'fugaz_one_regular', 'Open Sans', sans-serif;
     font-size: 36px;
@@ -77,6 +79,8 @@ h2.nav-tab-wrapper, h3.nav-tab-wrapper {
 .wrap h2 a.nav-tab:before {
     color: #24465a;
     font-family: 'icomoon', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     margin-right: 5px;
     right: 8px;
@@ -135,9 +139,6 @@ h2.nav-tab-wrapper, h3.nav-tab-wrapper {
 .nicescrollr_settings_toggle:hover {
     border: 1px solid rgb(229, 229, 229);
     background: none repeat scroll 0% 0% rgb(255, 255, 255);
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
     cursor: pointer;
 }
 
@@ -182,6 +183,8 @@ form#nsr_form table,
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 0 40px rgba(0, 0, 0, 0.01) inset;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 0 40px rgba(0, 0, 0, 0.01) inset;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 0 40px rgba(0, 0, 0, 0.01) inset;
+
+    transition: all 0.12s ease-in-out;
 }
 
 #nsr_form tr:before,
@@ -199,6 +202,17 @@ form#nsr_form table,
     -ms-transform: skew(8deg) rotate(3deg);
     -o-transform: skew(8deg) rotate(3deg);
     transform: skew(8deg) rotate(3deg);
+}
+
+#nsr_form tr:hover {
+    /*background-color: #fafafa;
+    transition: all 0.12s;*/
+    border: 1px solid rgb(229, 229, 229);
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    transition: all 0.12s ease-in-out;
 }
 
 input[type="text"].nsr-switch {
@@ -291,7 +305,7 @@ input[type="text"].nsr-switch {
     }
 
     .form-table label {
-        padding: 18px 0 0 24px;
+        /*padding: 18px 0 0 24px;*/
     }
 
     .form-table td p:first-of-type {
@@ -361,8 +375,8 @@ input[type="text"].nsr-switch {
 
     .form-table label {
         box-sizing: border-box;
-        margin: 12px 0 12px 0;
-        padding: 12px 0 12px 0;
+        /*margin: 12px 0 12px 0;
+        padding: 12px 0 12px 0;*/
     }
 
     /* .nicescroll-input-container */
@@ -563,121 +577,159 @@ input[type="text"].nsr-switch {
 /************************************************
  * Switch
  ***********************************************/
-:root input[type="checkbox"].nsr-switch {
-    /* :root here acting as a filter for older browsers */
-    position: absolute;
-    opacity: 0;
+/*
+ * Copyright (c) 2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+.container > .nsr-switch {
+    display: block;
+    margin: 12px auto;
 }
 
-:root input[type="text"].nsr-switch {
-    /* :root here acting as a filter for older browsers */
-    position: absolute;
-    opacity: 0;
-    width: 100px;
-    max-width: 100px;
-}
-
-:root input[type="checkbox"].nsr-switch + div {
+.nsr-switch {
+    position: relative;
     display: inline-block;
-    vertical-align: middle;
-    width: 3em;
-    height: 1em;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 999px;
-    margin: 0;
+    vertical-align: top;
+    width: 56px;
+    height: 20px;
+    padding: 3px;
     background-color: white;
-    background-image: linear-gradient(rgba(0, 0, 0, .1), transparent),
-    linear-gradient(90deg, #3D99F5 50%, transparent 50%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    background-origin: border-box;
-    background-clip: border-box;
-    overflow: hidden;
-    transition-duration: .4s;
-    transition-property: padding, width, background-position, text-indent;
-    box-shadow: 0 .1em .1em rgba(0, 0, 0, .2) inset,
-    0 .45em 0 .1em rgba(0, 0, 0, .05) inset;
-    font-size: 140%; /* change this and see how they adjust! */
+    border-radius: 18px;
+    box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #eeeeee, white 25px);
+    background-image: -moz-linear-gradient(top, #eeeeee, white 25px);
+    background-image: -o-linear-gradient(top, #eeeeee, white 25px);
+    background-image: linear-gradient(to bottom, #eeeeee, white 25px);
 }
 
-:root input[type="checkbox"].nsr-switch:checked + div {
-    padding-left: 2em;
-    width: 1em;
-    background-position: 0 0;
+.nsr-switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
-:root input[type="checkbox"].nsr-switch + div:before {
-    content: 'On';
-    float: left;
-    width: 1.65em;
-    height: 1.65em;
-    margin: -.1em;
-    border: 1px solid rgba(0, 0, 0, .35);
-    border-radius: inherit;
-    background-color: white;
-    background-image: linear-gradient(rgba(0, 0, 0, .2), transparent);
-    box-shadow: 0 .1em .1em .1em hsla(0, 0%, 100%, .8) inset,
-    0 0 .5em rgba(0, 0, 0, .3);
-    color: white;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, .3);
-    text-indent: -2.5em;
-}
-
-:root input[type="checkbox"].nsr-switch:active + div:before {
-    background-color: #eee;
-}
-
-:root input[type="checkbox"].nsr-switch:focus + div {
-    box-shadow: 0 .1em .1em rgba(0, 0, 0, .2) inset,
-    0 .45em 0 .1em rgba(0, 0, 0, .05) inset,
-    0 0 .4em 1px #e74c3c;
-}
-
-:root input[type="checkbox"].nsr-switch + div:before,
-:root input[type="checkbox"].nsr-switch + div:after {
-    font: bold 60%/1.9 sans-serif;
-    text-transform: uppercase;
-}
-
-:root input[type="checkbox"].nsr-switch + div:after {
-    content: 'Off';
-    float: left;
-    text-indent: .5em;
-    color: rgba(0, 0, 0, .45);
-    text-shadow: none;
-}
-
-label .label-for-nsr-switch {
+.nsr-switch-label {
     position: relative;
     display: block;
-    padding: .8em;
-    border: 1px solid silver;
-    border-top-width: 0;
-    background: white;
-    font: bold 110% sans-serif;
+    height: inherit;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #eceeef;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
 }
 
-label .label-for-nsr-switch:first-of-type {
-    border-top-width: 1px;
-    border-radius: .6em .6em 0 0;
+.nsr-switch-label:before, .nsr-switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
 }
 
-label .label-for-nsr-switch:last-of-type {
-    border-radius: 0 0 .6em .6em;
-    box-shadow: 0 1px hsla(0, 0%, 100%, .8);
+.nsr-switch-label:before {
+    content: attr(data-off);
+    right: 11px;
+    color: #aaa;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
 }
 
-.nsr-switch-container {
-    position: relative;
+.nsr-switch-label:after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+.nsr-switch-input:checked ~ .nsr-switch-label {
+    background: #47a8d8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.nsr-switch-input:checked ~ .nsr-switch-label:before {
+    opacity: 0;
+}
+
+.nsr-switch-input:checked ~ .nsr-switch-label:after {
+    opacity: 1;
+}
+
+.nsr-switch-handle {
+    position: absolute;
     top: 4px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(top, white 40%, #f0f0f0);
+    background-image: -moz-linear-gradient(top, white 40%, #f0f0f0);
+    background-image: -o-linear-gradient(top, white 40%, #f0f0f0);
+    background-image: linear-gradient(to bottom, white 40%, #f0f0f0);
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
 }
 
-.nsr-switch-container:hover {
-    cursor: pointer;
+.nsr-switch-handle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    background-image: -webkit-linear-gradient(top, #eeeeee, white);
+    background-image: -moz-linear-gradient(top, #eeeeee, white);
+    background-image: -o-linear-gradient(top, #eeeeee, white);
+    background-image: linear-gradient(to bottom, #eeeeee, white);
 }
 
-.label-for-nsr-switch {
+.nsr-switch-input:checked ~ .nsr-switch-handle {
+    left: 40px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nsr-switch-green > .nsr-switch-input:checked ~ .nsr-switch-label {
+    background: #4fb845;
+}
+
+/* labels */
+#nsr_form label {
     pointer-events: none;
+}
+
+/* The swich - since it is inside a label element. */
+#nsr_form .nsr-switch {
+    pointer-events: initial;
+}
+
+.nsr-switch {
+    margin-left: 12px;
+    margin-top: 6px;
 }
 
 /************************************************
@@ -967,4 +1019,12 @@ div.fancy-select ul.options li.hover {
 .error .notice {
     width: 100%;
     max-width: 480px;
+}
+
+/**************************************************************
+ * jQuery UI tooltip
+ *************************************************************/
+.nsr-tooltip {
+    /*border: 5px solid red;*/
+
 }

@@ -74,7 +74,7 @@
             gesturezoom:             GlobalOptions.gesturezoom,
             grabcursorenabled:       GlobalOptions.grabcursorenabled,
             autohidemode:            Autohidemode,
-            /*background              : GlobalOptions.background,*/
+            background:              GlobalOptions.background,
             iframeautoresize:        GlobalOptions.iframeautoresize,
             cursorminheight:         GlobalOptions.cursorminheight,
             preservenativescrolling: GlobalOptions.preservenativescrolling,

@@ -19,20 +19,11 @@
         /*--------------------------------------------------
          * Color Picker
          *------------------------------------------------*/
-        $('.cursorcolor, .cursorbordercolor').wpColorPicker();
+        $('.cursorcolor, .cursorbordercolor, .background').wpColorPicker();
+        /*$('.cursorcolor').attr('id', 'cursorcolor');
+        $('.cursorbordercolor').attr('id', 'cursorbordercolor');
+        $('.background').attr('id', 'background');*/
 
-        /*--------------------------------------------------
-         * Checkboxes
-         *------------------------------------------------*/
-        // Wrap.
-        $("<div class='nsr-switch-container'></div>").insertAfter(".nsr-switch");
-        // Toggle.
-        $('.nsr-switch-container').on('click', function (event){
-
-            event = event || window.event;
-            event.preventDefault();
-            $(this).prev().attr("checked", !$(this).prev().attr("checked"));
-        });
 
         /*--------------------------------------------------
          * Form Table Wrap
@@ -51,7 +42,7 @@
         var tables = $("table.form-table");
         // Set the button
         var upperToggle = toggles.eq(0);
-        upperToggle.addClass('icomoon icon-cog nicescrollr_settings_toggle');
+        upperToggle.addClass('icomoon icomoon-equalizer nicescrollr_settings_toggle');
 
         // Set the element to toggle
         var upperPanel = tables.eq(0);
@@ -75,7 +66,7 @@
          *------------------------------------------------*/
         // Set the button
         var lowerToggle = toggles.eq(1);
-        lowerToggle.addClass('icomoon icon-cog nicescrollr_settings_toggle');
+        lowerToggle.addClass('icomoon icomoon-equalizer nicescrollr_settings_toggle');
 
         // Set the element to toggle
         var lowerPanel = tables.eq(1);
@@ -122,7 +113,20 @@
                     event.preventDefault();
 
                     var address = $(this).attr('href');
-                    var target = $('input' + address);
+
+                    // If the target is a color picker and thus it is an anchor with an id and not an input element,
+                    // we change the targeted element to keep the scrollTo-functionality fully functional.
+                    if( address == '#cursorcolor' || address == '#cursorbordercolor' || address == '#background') {
+
+                        var element = $('input' + address);
+                        var target = element.parent().prev();
+                        target.attr('id', $(this).attr('href'));
+                        $(this).removeAttr('id');
+                        $(this).parent().prev().attr('id', address);
+                    } else {
+
+                        var target = $('input' + address);
+                    }
 
                     if ($(this).data('index') >= nsrMenu.basic_options_count){
 
@@ -154,10 +158,10 @@
         /*--------------------------------------------------
          * Localisation for the text on the switches (checkboxes). @todo: May find a less ugly solution...
          *------------------------------------------------*/
-        if( nsrMenu.locale != 'default') {
+        if( nsrMenu.locale == 'de_DE') {
 
-            $('<style>:root input[type="checkbox"].nsr-switch + div:before{content:"' + nsrMenu.On + '";}</style>').appendTo('head');
-            $('<style>:root input[type="checkbox"].nsr-switch + div:after{content:"' + nsrMenu.Off + '";}</style>').appendTo('head');
+            $('<style>.nsr-switch-label:before{content:"' + nsrMenu.Off + '";}</style>').appendTo('head');
+            $('<style>.nsr-switch-label:after{content:"' + nsrMenu.On + '";}</style>').appendTo('head');
 
         }
     });

@@ -51,6 +51,15 @@ class nsr_menu {
 	private $Options;
 
 	/**
+	 * The reference to the options class.
+	 *
+	 * @since  0.1.0
+	 * @access private
+	 * @var    object $Custom_Controls
+	 */
+	private $Custom_Controls;
+
+	/**
 	 * The reference to the class that represents
 	 * the "reset section" on the plugin options tab.
 	 *
@@ -193,9 +202,9 @@ class nsr_menu {
 
 			if ( ! wp_style_is( 'alertify.core.min.css' ) && ! wp_style_is( 'alertify.core.css' ) ) {
 
-				// Alertify
+				// Alertify.
 				wp_enqueue_style(
-					$this->keys['plugin_name'] . '-alertify-core-css',
+					$this->keys['plugin_name'] . '-inc-alertify-core-css',
 					plugin_dir_url( __FILE__ ) . '../../vendor/alertify/alertify.core.css',
 					array(),
 					$this->keys['plugin_version'],
@@ -212,7 +221,7 @@ class nsr_menu {
 				'all'
 			);
 
-			// Icomoon
+			// Icomoon.
 			wp_enqueue_style(
 				$this->keys['plugin_name'] . '-icomoon-css',
 				plugin_dir_url( __FILE__ ) . 'fonts/icomoon/style.css',
@@ -221,7 +230,7 @@ class nsr_menu {
 				'all'
 			);
 
-			// Admin
+			// Admin.
 			wp_enqueue_style(
 				$this->keys['plugin_name'] . '-menu-css',
 				plugin_dir_url( __FILE__ ) . 'css/menu.css',
@@ -309,6 +318,7 @@ class nsr_menu {
 					false
 				);
 			}
+
 			// Settings Menu.
 			wp_enqueue_script(
 				$this->keys['plugin_name'] . '-menu-js',
@@ -318,7 +328,7 @@ class nsr_menu {
 					'wp-color-picker',
 					$this->keys['plugin_name'] . '-inc-fancy-select-js',
 					false !== $option['plugin']['backtop_enabled'] ? $this->keys['plugin_name'] . '-inc-backtop-min-js' : null,
-					false !== $option['plugin']['scrollto_enabled'] ? $this->keys['plugin_name'] . '-inc-scrollto-min-js' : null
+					false !== $option['plugin']['scrollto_enabled'] ? $this->keys['plugin_name'] . '-inc-scrollto-min-js' : null,
 				),
 				$this->keys['plugin_version'],
 				false
@@ -465,21 +475,11 @@ class nsr_menu {
 					$active_tab = 'frontend_options';
 				} ?>
 
-				<!-- Submit button wrapper for styling purposes -->
-				<!--<div class="dp-submit-button-wrap">
-					<?php
-/*						submit_button();
-					*/?>
-				</div>-->
-
 				<!-- Nav tab -->
 				<h2 class="nav-tab-wrapper">
-					<a href="?page=nicescrollr_settings&tab=frontend_options"
-					   class="nav-tab <?php echo $active_tab == 'frontend_options' ? 'nav-tab-active' : ''; ?> icomoon icon-home"><?php _e( 'Frontend', $this->keys['plugin_domain'] ); ?></a>
-					<a href="?page=nicescrollr_settings&tab=backend_options"
-					   class="nav-tab <?php echo $active_tab == 'backend_options' ? 'nav-tab-active' : ''; ?> icomoon icon-wordpress"><?php _e( 'Backend', $this->keys['plugin_domain'] ); ?></a>
-					<a href="?page=nicescrollr_settings&tab=plugin_options"
-					   class="nav-tab <?php echo $active_tab == 'plugin_options' ? 'nav-tab-active' : ''; ?> icomoon icon-wrench"><?php _e( 'Plugin', $this->keys['plugin_domain'] ); ?></a>
+					<a href="?page=nicescrollr_settings&tab=frontend_options" class="nav-tab <?php echo $active_tab == 'frontend_options' ? 'nav-tab-active' : ''; ?> icomoon icomoon-display"><?php _e( 'Frontend', $this->keys['plugin_domain'] ); ?></a>
+					<a href="?page=nicescrollr_settings&tab=backend_options" class="nav-tab <?php echo $active_tab == 'backend_options' ? 'nav-tab-active' : ''; ?> icomoon icomoon-wordpress"><?php _e( 'Backend', $this->keys['plugin_domain'] ); ?></a>
+					<a href="?page=nicescrollr_settings&tab=plugin_options" class="nav-tab <?php echo $active_tab == 'plugin_options' ? 'nav-tab-active' : ''; ?> icomoon icomoon-power-cord"><?php _e( 'Plugin', $this->keys['plugin_domain'] ); ?></a>
 				</h2>
 
 				<?php

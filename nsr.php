@@ -17,8 +17,8 @@
  * Plugin Name:       Nicescrollr
  * Plugin URI:        https://github.com/demispatti/nicescrollr/
  * Description:       An easy to use interface for the included jQuery Nicescroll plugin, packed with an extensive options panel.
- * Version:           0.1.0
- * Stable tag:        0.1.0
+ * Version:           0.1.1
+ * Stable tag:        0.1.1
  * Author:            Demis Patti <demis@demispatti.ch>
  * Author URI:        http://demispatti.ch
  * License:           GPL-2.0+

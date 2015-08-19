@@ -118,7 +118,7 @@ class nsr_admin {
 				plugin_dir_url( __FILE__ ) . '../js/nicescroll.js',
 				array(
 					'jquery',
-					$this->keys['plugin_name'] . '-inc-nicescroll-min-js'
+					$this->keys['plugin_name'] . '-inc-nicescroll-min-js',
 				),
 				$this->keys['plugin_version'],
 				true
@@ -165,13 +165,13 @@ class nsr_admin {
 	 */
 	private function initialize_help_tab() {
 
-		if ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] != 'nicescrollr_settings' ) {
+		if ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] !== 'nicescrollr_settings' ) {
 			return;
 		}
 
 		$Help_Tab = new nsr_help_tab( $this->keys );
 
-		$this->Loader->add_action( 'in_admin_header', $Help_Tab, 'add_tab' );
+		$this->Loader->add_action( 'in_admin_header', $Help_Tab, 'add_nsr_help_tab', 15 );
 	}
 
 	/**

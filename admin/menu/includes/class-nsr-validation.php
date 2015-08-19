@@ -133,6 +133,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst($option_key),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->cursorcolor_error_message()
@@ -150,6 +151,7 @@ class nsr_validation {
 							$value = '0';
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->cursoropacitymin_error_message()
@@ -166,6 +168,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->cursoropacitymax_error_message()
@@ -190,6 +193,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->cursorwidth_error_message()
@@ -217,6 +221,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->cursorborderwidth_error_message()
@@ -235,6 +240,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->cursorbordercolor_error_message()
@@ -259,6 +265,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->cursorborderradius_error_message()
@@ -279,6 +286,7 @@ class nsr_validation {
 							$value = $defaults[ $option_key ];
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->zindex_error_message()
@@ -295,6 +303,7 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->scrollspeed_error_message()
@@ -310,9 +319,26 @@ class nsr_validation {
 						$value = $defaults[ $option_key ];
 						$errors[ $option_key ] = array(
 							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
 							'index'        => $i,
 							'notice_level' => $notice_levels[ $option_key ],
 							'message'      => $this->mousescrollstep_error_message()
+						);
+					}
+
+					break;
+
+				case ( $option_key === 'background' );
+
+					if ( ! preg_match( '/^#[a-f0-9]{3,6}$/i', $value ) ) {
+
+						$value                 = $defaults[ $option_key ];
+						$errors[ $option_key ] = array(
+							'option_key'   => $option_key,
+							'name'         => ucfirst( $option_key ),
+							'index'        => $i,
+							'notice_level' => $notice_levels[ $option_key ],
+							'message'      => $this->background_error_message()
 						);
 					}
 
@@ -336,6 +362,7 @@ class nsr_validation {
 							$value = $defaults[ $option_key ];
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->cursorminheight_error_message()
@@ -355,6 +382,7 @@ class nsr_validation {
 							$value = '';
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->railpadding_error_message()
@@ -373,6 +401,7 @@ class nsr_validation {
 							$value = '';
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->hidecursordelay_error_message()
@@ -400,6 +429,7 @@ class nsr_validation {
 							$value = '';
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->directionlockdeadzone_error_message()
@@ -421,6 +451,7 @@ class nsr_validation {
 							$value = '';
 							$errors[ $option_key ] = array(
 								'option_key'   => $option_key,
+								'name'         => ucfirst( $option_key ),
 								'index'        => $i,
 								'notice_level' => $notice_levels[ $option_key ],
 								'message'      => $this->cursordragspeed_error_message()
@@ -684,6 +715,17 @@ class nsr_validation {
 	public function mousescrollstep_error_message() {
 
 		return new WP_Error( 'broke', __( "Your input didn't pass validation. This value must be a positive integer but it must not be 0 (zero). To aviod unwanted scrolling behaviour, it was reset to its default.", $this->keys['plugin_domain'] ) );
+	}
+
+	/**
+	 * Returns the specified error message.
+	 *
+	 * @since   0.1.0
+	 * @return \WP_Error
+	 */
+	public function background_error_message() {
+
+		return new WP_Error( 'broke', __( "Your input didn't pass validation. This value must be a hexadecimal color value. It was reset to its default. To customize it, please input a color value like '#fff' or '#0073AA'.", $this->keys['plugin_domain'] ) );
 	}
 
 	/**

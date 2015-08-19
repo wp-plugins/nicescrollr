@@ -140,12 +140,12 @@ class nsr_menu_localisation {
 	 */
 	private function get_localized_strings_for_switches() {
 
-		$locale = $this->get_locale();
+		$current = $this->get_locale();
 
-		switch( $locale ) {
+		switch( $current ) {
 
-			case( $locale == 'de_DE');
-				$labels = array( 'locale' => $locale, 'On' => 'Ein', 'Off' => 'Aus' );
+			case( $current['locale'] == 'de_DE');
+				$labels = array( 'locale' => $current['locale'], 'On' => 'Ein', 'Off' => 'Aus' );
 				break;
 
 			default:

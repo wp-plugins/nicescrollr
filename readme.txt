@@ -3,8 +3,8 @@
 Tags: nicescroll, scroll, scrollbar, scrolling, nice, frontend, backend, scrollen
 Requires at least: 3.8
 Tested up to: 4.2.2
-Version: 0.1.0
-Stable tag: 0.1.0
+Version: 0.1.1
+Stable tag: 0.1.1
 Contributors: OneMoreNerd
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ Let's you use the included jQuery Nicescroll plugin and its customisation trough
 + Highly customizable
 + For use on the frontend and / or the backend
 + Hide cursor and scrollbar
-+ ...
++ more to come
 
 It is highly customizable trough its extensive options panel, giving you full control over (almost) every native Nicescroll option.
 
@@ -34,8 +34,7 @@ Nothing that's not already built-in into WordPress.
 1. Upload the `nicescrollr` folder to your `/wp-content/plugins/` directory.
 2. Activate the "Nicescrollr" plugin through the "Plugins" menu in WordPress.
 3. You will find its settings page listed in the "settings" section.
-3. Go to the plugin settings page which is located under "settings" and fit it to your needs :-)
-4. Have fun!
+3. Go to the plugin settings page and fit it to your needs :-) Have fun!
 
 == Frequently Asked Questions ==
 
@@ -58,6 +57,18 @@ Unfortunately, I cannot provide free support for this plugin. I honestly wish I 
 3. Extended settings panel, lower part.
 
 == Changelog ==
+
+### Version 0.1.1 ###
+
+1. Fixed the icons.
+2. Replaced the switch for the checkbox with one that's compatible with Safari browsers.
+3. Added the option to assign a background color to the rail on both frontend and backend.
+4. Slightly modified the content of the help tab.
+5. Updated the German translation.
+6. Fixed an issue with a missing url for "scrollTo".
+7. Made the validation error notices dismissable.
+8. The scrollTo-extension now also works for the color pickers.
+8. Some minor bug fixes.
 
 ### Version 0.1.0 ###
 
