@@ -1,19 +1,19 @@
 === Nicescrollr ===
 
-Tags: nicescroll, scroll, scrollbar, scrolling, nice, frontend, backend, scrollen
-Requires at least: 3.8
-Tested up to: 4.2.2
-Version: 0.1.1
-Stable tag: 0.1.1
-Contributors: OneMoreNerd
-License: GPLv2 or later
+Tags: nicescroll, scroll, scrollbar, scrolling, nice, frontend, backend, scrollen  
+Requires at least: 3.9  
+Tested up to: 4.3  
+Version: 0.2.0  
+Stable tag: 0.2.0  
+Contributors: demispatti  
+License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Let's you use the included jQuery Nicescroll plugin and its customisation trough an easy-to-use options panel.
+Use Nicescroll on both the frontend and the backend!
 
-### Features ###
+== Features ==
 
 + The Nicescroll jQuery plugin
 + Smooth scroll
@@ -21,11 +21,11 @@ Let's you use the included jQuery Nicescroll plugin and its customisation trough
 + Highly customizable
 + For use on the frontend and / or the backend
 + Hide cursor and scrollbar
-+ more to come
++ compatible with "cbParallax"
 
-It is highly customizable trough its extensive options panel, giving you full control over (almost) every native Nicescroll option.
+It is highly customizable trough its extensive options panel, giving you full control the native Nicescroll options.
 
-### Requirements ###
+== Requirements ==
 
 Nothing that's not already built-in into WordPress.
 
@@ -38,7 +38,7 @@ Nothing that's not already built-in into WordPress.
 
 == Frequently Asked Questions ==
 
-### Why doesn't it work with my theme? ###
+= Why doesn't it work with my theme? =
 
 Most likely, this is because your theme already has the Nicescroll library on board. If that's the case, I advise you to uninstall this plugin again to prevent compatibility issues. Of course, you can always ask your theme developer to implement a function to disable the built-in solution if you like to use this plugin and its options.
 
@@ -46,7 +46,7 @@ The capability required for being able to customize settings is the following:
 
 * `nicescrollr_edit` - The user can change settings regarding this plugin.
 
-### Can you help me? ###
+= Can you help me? =
 
 Unfortunately, I cannot provide free support for this plugin. I honestly wish I could. However, very soon you will find a link for further informations.
 
@@ -58,7 +58,16 @@ Unfortunately, I cannot provide free support for this plugin. I honestly wish I 
 
 == Changelog ==
 
-### Version 0.1.1 ###
+= Version 0.2.0 =
+
+1. Resolved the translation bugs
+2. Optimized the default settings for both the frontend and the backend
+3. Implemented the nicescroll.plus-library.
+   It basically widens the rail and the cursor if their width is below 16px to 16px on hover so it's easier to grab it
+4. Modified the interface
+5. Updated the screenshots
+
+= Version 0.1.1 =
 
 1. Fixed the icons.
 2. Replaced the switch for the checkbox with one that's compatible with Safari browsers.
@@ -70,6 +79,6 @@ Unfortunately, I cannot provide free support for this plugin. I honestly wish I 
 8. The scrollTo-extension now also works for the color pickers.
 8. Some minor bug fixes.
 
-### Version 0.1.0 ###
+= Version 0.1.0 =
 
 First commit.
