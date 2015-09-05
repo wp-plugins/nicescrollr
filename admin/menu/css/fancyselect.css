@@ -1,0 +1,157 @@
+/**
+ * Fancy Select.
+ *
+ * @link              https://github.com/demispatti/nicescrollr
+ * @since             0.1.0
+ * @package           nicescrollr
+ * @subpackage        nicescrollr/admin/menu/css
+ * Author:            Demis Patti <demis@demispatti.ch>
+ * Author URI:        http://demispatti.ch
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+div.fancy-select {
+	position: relative;
+}
+
+div.fancy-select.disabled {
+	opacity: 0.5;
+}
+
+div.fancy-select select:focus + div.trigger {
+    border-color: rgb(91, 157, 217);
+    box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+}
+
+div.fancy-select select:focus + div.trigger.open {
+	box-shadow: none;
+
+}
+
+div.fancy-select div.trigger {
+	border-radius: 0;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	width: 158px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    margin: 0;
+	transition: all 240ms ease-out;
+	-webkit-transition: all 240ms ease-out;
+	-moz-transition: all 240ms ease-out;
+	-o-transition: all 240ms ease-out;
+    border: 1px solid rgb(221, 221, 221);
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+}
+
+div.fancy-select div.trigger:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: #4B5468;
+	top: 12px;
+	right: 10px;
+}
+
+div.fancy-select div.trigger.open {
+    background: rgb(246, 246, 246);
+	border: 1px solid rgb(226, 226, 226);
+	box-shadow: none;
+}
+
+div.fancy-select div.trigger.open:after {
+    border-top: 1px solid rgb(226, 226, 226);
+}
+
+div.fancy-select ul.options {
+	list-style: none;
+	margin: 0;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 2000;
+	max-height: 200px;
+	overflow: auto;
+	border-radius: 0;
+	min-width: 164px;
+    max-width: 164px;
+	transition: opacity 200ms ease-out, top 200ms ease-out, visibility 200ms ease-out;
+	-webkit-transition: opacity 200ms ease-out, top 200ms ease-out, visibility 200ms ease-out;
+	-moz-transition: opacity 200ms ease-out, top 200ms ease-out, visibility 200ms ease-out;
+	-ms-transition: opacity 200ms ease-out, top 200ms ease-out, visibility 200ms ease-out;
+	-o-transition: opacity 200ms ease-out, top 200ms ease-out, visibility 200ms ease-out;
+    border: 1px solid rgb(226, 226, 226);
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+div.fancy-select ul.options.open {
+	visibility: visible;
+	top: 30px;
+	opacity: 1;
+	/* have to use a non-visibility transition to prevent this iOS issue (bug?): */
+	/*http://stackoverflow.com/questions/10736478/css-animation-visibility-visible-works-on-chrome-and-safari-but-not-on-ios*/
+	transition: opacity 300ms ease-out, top 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out;
+    border: 1px solid rgb(226, 226, 226);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+}
+
+div.fancy-select ul.options.overflowing {
+	top: auto;
+	bottom: 40px;
+	transition: opacity 200ms ease-out, bottom 200ms ease-out, visibility 200ms ease-out;
+	-webkit-transition: opacity 200ms ease-out, bottom 200ms ease-out, visibility 200ms ease-out;
+	-moz-transition: opacity 200ms ease-out, bottom 200ms ease-out, visibility 200ms ease-out;
+	-ms-transition: opacity 200ms ease-out, bottom 200ms ease-out, visibility 200ms ease-out;
+	-o-transition: opacity 200ms ease-out, bottom 200ms ease-out, visibility 200ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing.open {
+	top: auto;
+	bottom: 50px;
+	transition: opacity 200ms ease-out, bottom 200ms ease-out;
+	-webkit-transition: opacity 200ms ease-out, bottom 200ms ease-out;
+	-moz-transition: opacity 200ms ease-out, bottom 200ms ease-out;
+	-ms-transition: opacity 200ms ease-out, bottom 200ms ease-out;
+	-o-transition: opacity 200ms ease-out, bottom 200ms ease-out;
+}
+
+div.fancy-select ul.options li {
+    padding: 3px 0 3px 6px;
+    margin: 0;
+    background: #fff;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	-ms-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+}
+
+div.fancy-select ul.options li.selected {
+	background: rgb(246, 246, 246);
+}
+
+div.fancy-select ul.options li.hover {
+    background: rgb(242, 242, 242);
+}

@@ -1,0 +1,422 @@
+/**
+ * Settings Menu.
+ *
+ * @link              https://github.com/demispatti/nicescrollr
+ * @since             0.1.0
+ * @package           nicescrollr
+ * @subpackage        nicescrollr/admin/menu/css
+ * Author:            Demis Patti <demis@demispatti.ch>
+ * Author URI:        http://demispatti.ch
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+/**************************************************************
+ * Settings Headings
+ *************************************************************/
+.nicescrollr_settings_toggle {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 960px;
+    padding: 30px 0 30px 12px;
+    margin-bottom: 0;
+    border: 1px solid rgb(229, 229, 229);
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    transition: all 0.2s ease-in-out;
+}
+
+.nicescrollr_settings_toggle:before,
+.nicescrollr_settings_toggle:after {
+    -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.09);
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+}
+
+.nicescrollr_settings_toggle:after {
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+}
+
+.nicescrollr_settings_toggle:hover {
+    border: 1px solid rgb(229, 229, 229);
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+/**************************************************************
+ * Options Table
+ *************************************************************/
+.form-table {
+    margin-top: 3px;
+}
+
+form#nsr_form,
+form#nsr_form table,
+.form-table-wrap,
+.form-table-wrap tbody,
+.form-table-wrap tbody tr {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 960px;
+}
+
+#nsr_form table {
+    width: inherit;
+    table-layout: fixed;
+    box-sizing: content-box;
+}
+
+#nsr_form tbody {
+    width: 100%;
+    min-width: 100%;
+    display: table;
+}
+
+#nsr_form tr {
+    display: table;
+    width: 100%;
+    border: 1px solid rgb(229, 229, 229);
+    height: 50px;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    clear: both;
+
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 0 40px rgba(0, 0, 0, 0.01) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 0 40px rgba(0, 0, 0, 0.01) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 0 40px rgba(0, 0, 0, 0.01) inset;
+}
+
+#nsr_form tr:before,
+#nsr_form tr:after {
+    -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+}
+
+#nsr_form tr:after {
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+}
+
+.form-table th,
+.form-table td {
+    padding: 0;
+    padding-top: 24px;
+    margin: 0;
+    height: 50px;
+    float: left;
+}
+
+input[type="text"].ios-switch {
+    width: 100px !important;
+}
+
+/* Input field heading */
+.form-table th {
+    width: 200px;
+    padding-left: 16px;
+}
+
+/* Input field and description */
+.form-table td {
+    min-width: 200px;
+    max-width: 100%;
+}
+
+.form-table td p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 16px;
+}
+
+/* Input field container */
+.form-table td p:first-of-type {
+    display: inline-block;
+    width: 160px;
+    float: left;
+}
+
+/* Description Container ("Label") */
+.form-table td p:last-of-type {
+    display: inline-block;
+    min-width: 240px;
+    position: relative;
+    top: 4px;
+    float: left;
+}
+
+.form-table-td-wrap {
+    clear: both;
+}
+
+@media screen and (max-width: 780px) {
+
+    .form-table th {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 12px 0 0 24px;
+        margin: 0;
+        float: none;
+    }
+
+    .form-table td {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 12px 0 0 24px;
+        margin: 0;
+        float: none;
+    }
+
+    .form-table td p {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        float: none;
+    }
+
+    .form-table label {
+        padding: 18px 0 0 24px;
+    }
+
+    .form-table td p:first-of-type {
+        width: 160px;
+        display: inline-block;
+        margin-bottom: 12px;
+        float: left;
+    }
+
+    .form-table td p:last-of-type {
+        width: auto;
+        display: inline-block;
+        float: left;
+    }
+
+    .form-table-td-wrap {
+        height: auto;
+        clear: both;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #nsr_form tr {
+        height: auto;
+    }
+
+    .form-table th {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 12px 0 0 24px;
+        margin: 0;
+        float: none;
+    }
+
+    .form-table td {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 12px 0 0 24px;
+        margin: 0;
+        float: none;
+    }
+
+    .form-table td input[type="text"],
+    .form-table td select {
+        width: 70%;
+    }
+
+    .form-table td p {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        float: none;
+    }
+
+    .form-table label {
+        box-sizing: border-box;
+        margin: 12px 0 12px 0;
+        padding: 12px 0 12px 0;
+    }
+
+    /* .nicescroll-input-container */
+    .form-table td p:first-of-type {
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        margin-bottom: 0;
+        float: none;
+    }
+
+    /* .nicescroll-label-container */
+    .form-table td p:last-of-type {
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        padding: 12px 0 12px 0;
+        float: none;
+    }
+
+    .form-table-td-wrap {
+        box-sizing: border-box;
+        height: auto;
+        clear: none;
+    }
+
+}
+
+/**************************************************************
+ * Buttons
+ *************************************************************/
+.settings_page_nicescrollr_settings .submit {
+    display: block;
+    height: 20px;
+}
+
+.settings_page_nicescrollr_settings .submit input {
+    display: block;
+    float: right;
+    position: relative;
+    right: 0;
+    height: auto;
+}
+
+/**************************************************************
+ * scrollTo
+ *************************************************************/
+
+.nsr-validation-error {
+    color: rgb(0, 115, 170);
+    text-decoration: underline;
+}
+
+.nsr-validation-error:hover {
+    color: rgb(0, 147, 214);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/**************************************************************
+ * Admin Notices
+ *************************************************************/
+.notice-error {
+
+    border-color: rgb(221, 61, 54) !important;
+}
+
+.notice-warning {
+
+    border-color: rgb(255, 186, 0) !important;
+}
+
+.notice-correction {
+
+    border-color: rgba(0, 147, 214, 0.98) !important;
+}
+
+
+/**************************************************************
+ * Reset Buttons Area
+ *************************************************************/
+.label-for-nsr-reset-button {
+    text-align: center;
+    width: 126px;
+    margin-top: 40px;
+}
+
+.wp-core-ui .button {
+    text-align: center;
+    min-width: 126px;
+}
+
+/**************************************************************
+ * Color Picker
+ *************************************************************/
+.wp-picker-container .iris-picker {
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    z-index: 1000;
+}
+
+/**************************************************************
+ * BackTop
+ *************************************************************/
+#backTop {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(68, 68, 68, 0.2);
+    text-decoration: none;
+    position: absolute;
+    bottom: 40px;
+    right: 120px;
+    background: url('../../../vendor/backtop/images/uparr-36-w.png') no-repeat center center rgb(0, 145, 205) !important;
+    border: 1px solid #fff;
+    opacity: 0.4;
+    display: none;
+}
+
+#backTop.black {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(68, 68, 68, 0.2);
+    text-decoration: none;
+    position: absolute;
+    background: url('../../../vendor/backtop/images/uparr-36-w.png') no-repeat center center rgb(0, 145, 205) !important;
+    border: 1px solid #fff;
+    opacity: 0.4;
+}
+
+/**************************************************************
+ * Placeholders
+ *************************************************************/
+::-webkit-input-placeholder {
+    color: #a0a9b9;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #A0A9B9;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #A0A9B9;
+}
+
+:-ms-input-placeholder {
+    color: #A0A9B9;
+    background-color: rgb(238, 238, 238);
+}
