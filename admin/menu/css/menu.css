@@ -32,7 +32,7 @@ p.alertify-message {
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .06) inset;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .06) inset;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .06) inset;
-    transition: all .2s ease-in-out
+    transition: all .2s ease-in-out;
 }
 
 .alertify {
@@ -740,7 +740,8 @@ input {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .06) inset
 }
 
-/*.validation-error-focus, */input[type=text]:active, input[type=text]:focus {
+/*.validation-error-focus, */
+input[type=text]:active, input[type=text]:focus {
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .09) inset, 0 1px 4px rgba(0, 0, 0, .09);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .09) inset, 0 1px 4px rgba(0, 0, 0, .09);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .09) inset, 0 1px 4px rgba(0, 0, 0, .09);

@@ -11,260 +11,271 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-(function ($) {
-    /*"use strict";*/
+(function( $ ){
+	/*"use strict";*/
 
-    var html = $("html");
+	var html = $( "html" );
 
-    // Cursor border
-    var Cursorborder = GlobalOptions.cursorborderwidth + ' ' +
-        GlobalOptions.cursorborderstate + ' ' +
-        GlobalOptions.cursorbordercolor;
+	// Cursor border
+	var Cursorborder = GlobalOptions.cursorborderwidth + ' ' +
+		GlobalOptions.cursorborderstate + ' ' +
+		GlobalOptions.cursorbordercolor;
 
-    // Rail padding
-    var Railpadding = "top: " + GlobalOptions.railpaddingtop +
-        ", right: " + GlobalOptions.railpaddingright +
-        ", bottom: " + GlobalOptions.railpaddingbottom +
-        ", left: " + GlobalOptions.railpaddingleft;
+	// Rail padding
+	var Railpadding = "top: " + GlobalOptions.railpaddingtop +
+		", right: " + GlobalOptions.railpaddingright +
+		", bottom: " + GlobalOptions.railpaddingbottom +
+		", left: " + GlobalOptions.railpaddingleft;
 
-    // Autohidemode mode
-    var Autohidemode = null;
-    switch (GlobalOptions.autohidemode) {
-        case 'off':
-            Autohidemode = false;
-            break;
-        case 'on':
-            Autohidemode = true;
-            break;
-        case 'cursor':
-            Autohidemode = 'cursor';
-            break;
-    }
+	// Autohidemode mode
+	var Autohidemode = null;
+	switch( GlobalOptions.autohidemode ){
+		case 'off':
+			Autohidemode = false;
+			break;
+		case 'on':
+			Autohidemode = true;
+			break;
+		case 'cursor':
+			Autohidemode = 'cursor';
+			break;
+	}
 
-    // Cursor fixed height
-    var Cursorfixedheight = GlobalOptions.cursorfixedheight;
-    if (Cursorfixedheight == 'off') {
-        Cursorfixedheight = false;
-    }
+	// Cursor fixed height
+	var Cursorfixedheight = GlobalOptions.cursorfixedheight;
+	if( Cursorfixedheight == 'off' ){
+		Cursorfixedheight = false;
+	}
 
-    // Rail offset
-    var Railoffset = GlobalOptions.railoffset;
-    if (Railoffset == 'off') {
-        Railoffset = false;
-    }
+	// Rail offset
+	var Railoffset = GlobalOptions.railoffset;
+	if( Railoffset == 'off' ){
+		Railoffset = false;
+	}
 
-    // Nicescroll configuration object
-    var config = ({
-        zindex: GlobalOptions.zindex,
-        cursoropacitymin: GlobalOptions.cursoropacitymin,
-        cursoropacitymax: GlobalOptions.cursoropacitymax,
-        cursorcolor: GlobalOptions.cursorcolor,
-        cursorwidth: GlobalOptions.cursorwidth,
-        cursorborder: Cursorborder,
-        cursorborderradius: GlobalOptions.cursorborderradius,
-        scrollspeed: GlobalOptions.scrollspeed,
-        mousescrollstep: GlobalOptions.mousescrollstep,
-        touchbehavior: GlobalOptions.touchbehavior,
-        hwacceleration: GlobalOptions.hwacceleration,
-        usetransition: GlobalOptions.usetransition,
-        boxzoom: GlobalOptions.boxzoom,
-        dblclickzoom: GlobalOptions.dblclickzoom,
-        gesturezoom: GlobalOptions.gesturezoom,
-        grabcursorenabled: GlobalOptions.grabcursorenabled,
-        autohidemode: Autohidemode,
-        background: GlobalOptions.background,
-        iframeautoresize: GlobalOptions.iframeautoresize,
-        cursorminheight: GlobalOptions.cursorminheight,
-        preservenativescrolling: GlobalOptions.preservenativescrolling,
-        railoffset: Railoffset,
-        bouncescroll: GlobalOptions.bouncescroll,
-        spacebar: GlobalOptions.spacebar,
-        railpadding: Railpadding,
-        disableoutline: GlobalOptions.disableoutline,
-        horizrailenabled: GlobalOptions.horizrailenabled,
-        railalign: GlobalOptions.railalign,
-        railvalign: GlobalOptions.railvalign,
-        enabletranslate3d: GlobalOptions.enabletranslate3d,
-        enablemousewheel: GlobalOptions.enablemousewheel,
-        enablekeyboard: GlobalOptions.enablekeyboard,
-        smoothscroll: GlobalOptions.smoothscroll,
-        sensitiverail: GlobalOptions.sensitiverail,
-        enablemouselockapi: GlobalOptions.enablemouselockapi,
-        /*cursormaxheight         : GlobalOptions.cursormaxheight,*/
-        cursorfixedheight: Cursorfixedheight,
-        directionlockdeadzone: GlobalOptions.directionlockdeadzone,
-        hidecursordelay: GlobalOptions.hidecursordelay,
-        nativeparentscrolling: GlobalOptions.nativeparentscrolling,
-        enablescrollonselection: GlobalOptions.enablescrollonselection,
-        overflowx: GlobalOptions.overflowx,
-        overflowy: GlobalOptions.overflowy,
-        cursordragspeed: GlobalOptions.cursordragspeed,
-        rtlmode: GlobalOptions.rtlmode,
-        cursordragontouch: GlobalOptions.cursordragontouch
-    });
+	// Nicescroll configuration object
+	var config = ({
+		zindex: GlobalOptions.zindex,
+		cursoropacitymin: GlobalOptions.cursoropacitymin,
+		cursoropacitymax: GlobalOptions.cursoropacitymax,
+		cursorcolor: GlobalOptions.cursorcolor,
+		cursorwidth: GlobalOptions.cursorwidth,
+		cursorborder: Cursorborder,
+		cursorborderradius: GlobalOptions.cursorborderradius,
+		scrollspeed: GlobalOptions.scrollspeed,
+		mousescrollstep: GlobalOptions.mousescrollstep,
+		touchbehavior: GlobalOptions.touchbehavior,
+		hwacceleration: GlobalOptions.hwacceleration,
+		usetransition: GlobalOptions.usetransition,
+		boxzoom: GlobalOptions.boxzoom,
+		dblclickzoom: GlobalOptions.dblclickzoom,
+		gesturezoom: GlobalOptions.gesturezoom,
+		grabcursorenabled: GlobalOptions.grabcursorenabled,
+		autohidemode: Autohidemode,
+		background: GlobalOptions.background,
+		iframeautoresize: GlobalOptions.iframeautoresize,
+		cursorminheight: GlobalOptions.cursorminheight,
+		preservenativescrolling: GlobalOptions.preservenativescrolling,
+		railoffset: Railoffset,
+		bouncescroll: GlobalOptions.bouncescroll,
+		spacebar: GlobalOptions.spacebar,
+		railpadding: Railpadding,
+		disableoutline: GlobalOptions.disableoutline,
+		horizrailenabled: GlobalOptions.horizrailenabled,
+		railalign: GlobalOptions.railalign,
+		railvalign: GlobalOptions.railvalign,
+		enabletranslate3d: GlobalOptions.enabletranslate3d,
+		enablemousewheel: GlobalOptions.enablemousewheel,
+		enablekeyboard: GlobalOptions.enablekeyboard,
+		smoothscroll: GlobalOptions.smoothscroll,
+		sensitiverail: GlobalOptions.sensitiverail,
+		enablemouselockapi: GlobalOptions.enablemouselockapi,
+		/*cursormaxheight         : GlobalOptions.cursormaxheight,*/
+		cursorfixedheight: Cursorfixedheight,
+		directionlockdeadzone: GlobalOptions.directionlockdeadzone,
+		hidecursordelay: GlobalOptions.hidecursordelay,
+		nativeparentscrolling: GlobalOptions.nativeparentscrolling,
+		enablescrollonselection: GlobalOptions.enablescrollonselection,
+		overflowx: GlobalOptions.overflowx,
+		overflowy: GlobalOptions.overflowy,
+		cursordragspeed: GlobalOptions.cursordragspeed,
+		rtlmode: GlobalOptions.rtlmode,
+		cursordragontouch: GlobalOptions.cursordragontouch
+	});
 
-    $(document).ready(function () {
+	/* jquery.nicescroll.plus
+	 -- the addon for nicescroll
+	 -- version 1.0.0 BETA
+	 -- copyright 13 InuYaksa*2013
+	 -- licensed under the MIT
+	 --
+	 -- http://areaaperta.com/nicescroll
+	 -- https://github.com/inuyaksa/jquery.nicescroll
+	 --
+	 */
+	if( !$ || !("nicescroll" in $) ){
+		return;
+	}
 
-        // Let's roll
-        html.niceScroll(config);
+	// Checks if the the default scrollbar option is active.
 
-        // Workaround for the adminbar. Top rocks bottom s*cks so far. @todo
-        var adminbar = $('#wpadminbar');
-        if (adminbar.length !== 0) {
+	var stretchedwidth = 16;
 
-            $('#ascrail2000').css({
-                top: adminbar.height()
-            });
-        }
+	var stretchedradius = 32;
 
-        // Checks for dom changes.
-        function checkDOMChange() {
+	var duration = 200;
 
-            if (setTimeout(checkDOMChange, 400)) {
+	var ncwidth = GlobalOptions.cursorwidth.replace( 'px', '' );
 
-                html.getNiceScroll().resize();
-            }
-        }
+	$.extend( $.nicescroll.options, {
 
-        checkDOMChange();
+		styler: ncwidth < stretchedwidth ? 'fb' : false
+	} );
 
-    });
+	var _super = {
+		"niceScroll": $.fn.niceScroll,
+		"getNiceScroll": $.fn.getNiceScroll
+	};
 
+	$.fn.niceScroll = function( wrapper, opt ){
 
-    /* jquery.nicescroll.plus
-     -- the addon for nicescroll
-     -- version 1.0.0 BETA
-     -- copyright 13 InuYaksa*2013
-     -- licensed under the MIT
-     --
-     -- http://areaaperta.com/nicescroll
-     -- https://github.com/inuyaksa/jquery.nicescroll
-     --
-     */
-    if (!$ || !("nicescroll" in $)) {
-        return;
-    }
+		if( !(typeof wrapper == "undefined") ){
+			if( typeof wrapper == "object" ){
+				opt = wrapper;
+				wrapper = false;
+			}
+		}
 
-    var stretchedwidth = 16;
+		var styler = (opt && opt.styler) || $.nicescroll.options.styler;
 
-    var stretchedradius = 32;
+		if( styler ){
+			nw = preStyler( styler );
+			$.extend( nw, opt );
+			opt = nw;
+		}
 
-    var duration = 200;
+		var ret = _super.niceScroll.call( this, wrapper, opt );
 
-    var ncwidth = GlobalOptions.cursorwidth.replace('px', '');
+		if( styler ) doStyler( styler, ret );
 
-    $.extend($.nicescroll.options, {
+		ret.scrollTo = function( el ){
+			var off = this.win.position();
+			var pos = this.win.find( el ).position();
+			if( pos ){
+				var top = Math.floor( pos.top - off.top + this.scrollTop() );
+				this.doScrollTop( top );
+			}
+		};
 
-        styler: ncwidth < stretchedwidth ? 'fb' : false
-    });
+		return ret;
+	};
 
-    var _super = {
-        "niceScroll": $.fn.niceScroll,
-        "getNiceScroll": $.fn.getNiceScroll
-    };
+	$.fn.getNiceScroll = function( index ){
+		var ret = _super.getNiceScroll.call( this, index );
+		ret.scrollTo = function( el ){
+			this.each( function(){
+				this.scrollTo.call( this, el );
+			} );
+		};
+		return ret;
+	};
 
-    $.fn.niceScroll = function (wrapper, opt) {
+	function preStyler( styler ){
+		var opt = {};
+		switch( styler ){
+			case "fb":
+				opt.autohidemode = Autohidemode;
+				opt.cursorcolor = GlobalOptions.cursorcolor;
+				opt.railcolor = GlobalOptions.background;
+				opt.cursoropacitymax = GlobalOptions.cursoropacitymax;
+				opt.cursorwidth = stretchedwidth;
+				opt.cursorborder = Cursorborder;
+				opt.cursorborderradius = stretchedradius + "px";
+				break;
+		}
+		return opt;
+	}
 
-        if (!(typeof wrapper == "undefined")) {
-            if (typeof wrapper == "object") {
-                opt = wrapper;
-                wrapper = false;
-            }
-        }
+	function doStyler( styler, nc ){
+		if( !nc.rail ) return;
 
-        var styler = (opt && opt.styler) || $.nicescroll.options.styler;
+		switch( styler ){
+			case "fb":
 
-        if (styler) {
-            nw = preStyler(styler);
-            $.extend(nw, opt);
-            opt = nw;
-        }
+				nc.cursor.stop().animate( {
+					width: GlobalOptions.cursorwidth,
+					"-webkit-border-radius": stretchedradius + "px",
+					"-moz-border-radius": stretchedradius + "px",
+					"border-radius": stretchedradius + "px"
+				}, duration );
 
-        var ret = _super.niceScroll.call(this, wrapper, opt);
+				var obj = (nc.ispage) ? nc.rail : nc.win;
 
-        if (styler) doStyler(styler, ret);
+			function endHover(){
+				nc._stylerfbstate = false;
 
-        ret.scrollTo = function (el) {
-            var off = this.win.position();
-            var pos = this.win.find(el).position();
-            if (pos) {
-                var top = Math.floor(pos.top - off.top + this.scrollTop());
-                this.doScrollTop(top);
-            }
-        };
+				nc.cursor.stop().animate( {
+					width: GlobalOptions.cursorwidth,
+					"backgroundColor": GlobalOptions.background
+				}, duration );
+			}
 
-        return ret;
-    };
+				obj.hover( function(){
+						nc._stylerfbstate = true;
 
-    $.fn.getNiceScroll = function (index) {
-        var ret = _super.getNiceScroll.call(this, index);
-        ret.scrollTo = function (el) {
-            this.each(function () {
-                this.scrollTo.call(this, el);
-            });
-        };
-        return ret;
-    };
+						nc.cursor.stop().animate( {
+							width: stretchedwidth,
+							"backgroundColor": GlobalOptions.background
+						}, duration );
+					},
+					function(){
+						if( nc.rail.drag ) return;
+						endHover();
+					} );
 
-    function preStyler(styler) {
-        var opt = {};
-        switch (styler) {
-            case "fb":
-                opt.autohidemode = Autohidemode/*false*/;
-                opt.cursorcolor = GlobalOptions.cursorcolor;
-                opt.railcolor = GlobalOptions.background/*""*/;
-                opt.cursoropacitymax = GlobalOptions.cursoropacitymax;
-                opt.cursorwidth = stretchedwidth;
-                opt.cursorborder = Cursorborder;
-                opt.cursorborderradius = stretchedradius + "px";
-                break;
-        }
-        return opt;
-    }
+				$( document ).mouseup( function(){
+					if( nc._stylerfbstate ) endHover();
+				} );
 
-    function doStyler(styler, nc) {
-        if (!nc.rail) return;
+				break;
+		}
+	}
 
-        switch (styler) {
-            case "fb":
+	$( document ).ready( function(){
 
-                nc.cursor.stop().animate({
-                    width: GlobalOptions.cursorwidth,
-                    "-webkit-border-radius": stretchedradius + "px",
-                    "-moz-border-radius": stretchedradius + "px",
-                    "border-radius": stretchedradius + "px"
-                }, duration);
+		// Let's roll
+		if( GlobalOptions.defaultScrollbar){
+			var nice = html.niceScroll( config );
+			// Hides the rail and the scrollbar.
+			nice.hide();
+			// Forces display of the default scrollbar in IE.
+			$( 'body' ).css( {
+				'-ms-overflow-style': 'scrollbar'
+			} );
+		} else{
+			var nice = html.niceScroll( config );
+		}
 
-                var obj = (nc.ispage) ? nc.rail : nc.win;
+		// Workaround for the adminbar. Top rocks bottom s*cks so far. @todo
+		var adminbar = $( '#wpadminbar' );
+		if( adminbar.length !== 0 ){
 
-            function endHover() {
-                nc._stylerfbstate = false;
+			$( '#ascrail2000' ).css( {
+				top: adminbar.height()
+			} );
+		}
 
-                nc.cursor.stop().animate({
-                    width: GlobalOptions.cursorwidth,
-                    "backgroundColor": GlobalOptions.background
-                }, duration);
-            }
+		// Checks for dom changes.
+		function checkDOMChange(){
 
-                obj.hover(function () {
-                        nc._stylerfbstate = true;
+			if( setTimeout( checkDOMChange, 400 ) ){
 
-                        nc.cursor.stop().animate({
-                            width: stretchedwidth,
-                            "backgroundColor": GlobalOptions.background
-                        }, duration);
-                    },
-                    function () {
-                        if (nc.rail.drag) return;
-                        endHover();
-                    });
+				html.getNiceScroll().resize();
+			}
+		}
 
-                $(document).mouseup(function () {
-                    if (nc._stylerfbstate) endHover();
-                });
+		checkDOMChange();
 
-                break;
-        }
-    }
+	} );
 
-})(jQuery);
+})( jQuery );

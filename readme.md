@@ -1,29 +1,27 @@
 === Nicescrollr ===
 
 Tags: nicescroll, scroll, scrollbar, scrolling, nice, frontend, backend, scrollen  
+
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLMMS7C62S76Q  
 Requires at least: 3.9  
-Tested up to: 4.3  
-Version: 0.2.0  
-Stable tag: 0.2.0  
+Tested up to: 4.3.1  
+Version: 0.2.1  
+Stable tag: 0.2.1  
 Contributors: demispatti  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Use Nicescroll on both the frontend and the backend!
+This plugin brings the "Nicescroll" scrollbar to your website. You can use it on both the frontend and the backend. It is fully customizable, so you can tweak and tune every single parameter Nicescroll has to offer! You can style it totally different for both views. You can even keep the default scrollbar if you like. It's all up to you. Install and enjoy :-)
 
 == Features ==
 
 + The Nicescroll jQuery plugin
 + Smooth scroll
 + Momentum (or not)
-+ Highly customizable
-+ For use on the frontend and / or the backend
-+ Hide cursor and scrollbar
-+ compatible with "cbParallax"
-
-It is highly customizable trough its extensive options panel, giving you full control the native Nicescroll options.
++ Fully customizable
++ For use on the frontend and the backend
 
 == Requirements ==
 
@@ -40,7 +38,7 @@ Nothing that's not already built-in into WordPress.
 
 = Why doesn't it work with my theme? =
 
-Most likely, this is because your theme already has the Nicescroll library on board. If that's the case, I advise you to uninstall this plugin again to prevent compatibility issues. Of course, you can always ask your theme developer to implement a function to disable the built-in solution if you like to use this plugin and its options.
+Most likely, this is because your theme (or another plugin?) already has the Nicescroll library on board. If that's the case, I advise you to uninstall this plugin again to prevent compatibility issues. Of course, you can always ask your theme developer to implement a function to disable the built-in solution if you like to use this plugin and its options.
 
 The capability required for being able to customize settings is the following:
 
@@ -48,7 +46,7 @@ The capability required for being able to customize settings is the following:
 
 = Can you help me? =
 
-Unfortunately, I cannot provide free support for this plugin. I honestly wish I could. However, very soon you will find a link for further informations.
+Well, I provide some basic support on this plugins support page. I check that place up to three times a week, so you may have to be a bit patient ;-)
 
 == Screenshots ==
 
@@ -57,6 +55,11 @@ Unfortunately, I cannot provide free support for this plugin. I honestly wish I 
 3. Extended settings panel, lower part.
 
 == Changelog ==
+
+= Version 0.2.1 =
+
+1. Added an option to replace the nicescroll scrollbar with the browsers default scrollbar
+2. Some minor code and comment cleanup
 
 = Version 0.2.0 =
 
