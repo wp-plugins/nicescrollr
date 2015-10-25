@@ -5,8 +5,8 @@ Tags: nicescroll, scroll, scrollbar, scrolling, nice, frontend, backend, scrolle
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLMMS7C62S76Q  
 Requires at least: 3.9  
 Tested up to: 4.3.1  
-Version: 0.2.1  
-Stable tag: 0.2.1  
+Version: 0.2.1.1  
+Stable tag: 0.2.1.1  
 Contributors: demispatti  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,11 @@ Well, I provide some basic support on this plugins support page. I check that pl
 3. Extended settings panel, lower part.
 
 == Changelog ==
+
+= Version 0.2.1.1 =
+
+1. Fixed missing stuff...
+2. Fixed compatibility with "cbParallax", which uses the Nicescroll library
 
 = Version 0.2.1 =
 

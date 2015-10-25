@@ -17,8 +17,8 @@
  * Plugin Name:       Nicescrollr
  * Plugin URI:        https://github.com/demispatti/nicescrollr/
  * Description:       This plugin brings the "Nicescroll" scrollbar to your website. You can use it on both the frontend and the backend. It is fully customizable, so you can tweak and tune every single parameter Nicescroll has to offer! You can style it totally different for both views. You can even keep the default scrollbar if you like. It's all up to you.
- * Version:           0.2.1
- * Stable tag:        0.2.1
+ * Version:           0.2.1.1
+ * Stable tag:        0.2.1.1
  * Author:            Demis Patti <demis@demispatti.ch>
  * Author URI:        http://demispatti.ch
  * License:           GPL-2.0+
