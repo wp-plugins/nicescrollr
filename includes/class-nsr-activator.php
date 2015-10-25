@@ -68,7 +68,7 @@ class nsr_activator extends nsr {
 		// Loops trough the option groups and seeds the default options if there is no data in the database yet.
 		foreach( $Options->get_settings_sections() as $section ) {
 
-			if( FALSE === get_option( $this->keys['option_group'] ) ) {
+			if( false === get_option( $this->keys['option_group'] ) ) {
 				$Options->seed_options( $section );
 			}
 		}

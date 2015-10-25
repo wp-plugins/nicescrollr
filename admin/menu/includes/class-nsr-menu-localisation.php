@@ -88,7 +88,7 @@ class nsr_menu_localisation {
 	 */
 	private function get_plugin_options() {
 
-		if( FALSE !== get_option( $this->keys['option_group'] ) && '1' !== get_option( $this->keys['option_group'] ) ) {
+		if( false !== get_option( $this->keys['option_group'] ) && '1' !== get_option( $this->keys['option_group'] ) ) {
 
 			$options = get_option( $this->keys['option_group'] );
 

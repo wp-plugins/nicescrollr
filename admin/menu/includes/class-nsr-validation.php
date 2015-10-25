@@ -49,7 +49,7 @@ class nsr_validation {
 	 * @param object $Options
 	 * @param string $section
 	 */
-	public function __construct( $keys, $Options, $section = FALSE ) {
+	public function __construct( $keys, $Options, $section = false ) {
 
 		$this->keys = $keys;
 		$this->Options = $Options;
@@ -65,7 +65,7 @@ class nsr_validation {
 	 */
 	public function run( $input, $section ) {
 
-		if( isset($input) && FALSE === $section ) {
+		if( isset($input) && false === $section ) {
 
 			$output = $input;
 
@@ -78,7 +78,7 @@ class nsr_validation {
 			return $this->merge_options( $valid, $section );
 		} else {
 
-			return TRUE;
+			return true;
 		}
 	}
 
@@ -468,7 +468,7 @@ class nsr_validation {
 		// Fill unset options with "false".
 		foreach( $defaults as $key => $value ) {
 
-			$output[ $key ] = isset($output[ $key ]) ? $output[ $key ] : FALSE;
+			$output[ $key ] = isset($output[ $key ]) ? $output[ $key ] : false;
 		}
 
 		if( get_locale() !== 'en_US' ) {

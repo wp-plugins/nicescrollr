@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nicescrollr\n"
-"POT-Creation-Date: 2015-10-25 02:16+0100\n"
-"PO-Revision-Date: 2015-10-25 02:18+0100\n"
+"POT-Creation-Date: 2015-10-25 23:24+0100\n"
+"PO-Revision-Date: 2015-10-25 23:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/class-nsr-admin.php:241
+#: admin/class-nsr-admin.php:246
 msgid "Plugin support"
 msgstr "Plugin-Unterstützung"
 
-#: admin/class-nsr-admin.php:242
+#: admin/class-nsr-admin.php:247
 msgid "Rate plugin"
 msgstr "Plugin bewerten"
 
-#: admin/class-nsr-admin.php:243
+#: admin/class-nsr-admin.php:248
 msgid "Donate"
 msgstr "Spenden"
 

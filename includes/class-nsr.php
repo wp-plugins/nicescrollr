@@ -116,7 +116,7 @@ class nsr {
 
 		$Admin = new nsr_admin( $this->get_keys(), $this->get_loader() );
 
-		$this->Loader->add_action( 'admin_enqueue_scripts', $Admin, 'enqueue_scripts', 10 );
+		$this->Loader->add_action( 'admin_enqueue_scripts', $Admin, 'enqueue_scripts', 20 );
 		$this->Loader->add_action( 'admin_enqueue_scripts', $Admin, 'initialize_localisation', 100 );
 		$this->Loader->add_action( 'plugin_row_meta', $Admin, 'plugin_row_meta', 10, 2 );
 	}
@@ -132,8 +132,8 @@ class nsr {
 
 		$Public = new nsr_public( $this->get_keys() );
 
-		$this->Loader->add_action( 'wp_enqueue_scripts', $Public, 'enqueue_scripts', 10 );
-		$this->Loader->add_action( 'wp_enqueue_scripts', $Public, 'initialize_localisation', 100 );
+		$this->Loader->add_action( 'wp_enqueue_scripts', $Public, 'enqueue_scripts', 20 );
+		$this->Loader->add_action( 'wp_enqueue_scripts', $Public, 'initialize_localisation', 21 );
 	}
 
 	/**

@@ -153,7 +153,7 @@ class nsr_settings {
 			$section = $_REQUEST['section'];
 		} else {
 
-			$section = FALSE;
+			$section = false;
 		}
 
 		$output = $this->Validation->run( $input, $section );
@@ -175,7 +175,7 @@ class nsr_settings {
 
 		$options = get_option( $this->keys['option_group'] );
 
-		if( FALSE === $options ) {
+		if( false === $options ) {
 
 			$this->Options->seed_options();
 		} else if( count( $options ) !== 3 ) {
@@ -362,7 +362,7 @@ class nsr_settings {
 		$section = $args['section'];
 
 		$html = '<label class="nsr-switch label-for-nsr-switch" title="' . $title . '">';
-		$html .= '<input type="checkbox" id="' . $option_key . '" class="nsr-switch-input nsr-input-checkbox" name="' . $this->keys['option_group'] . '[' . $option_key . ']" value="1" ' . checked( 1, isset($options[ $section ][ $option_key ]) ? $options[ $section ][ $option_key ] : 0, FALSE ) . '></input>';
+		$html .= '<input type="checkbox" id="' . $option_key . '" class="nsr-switch-input nsr-input-checkbox" name="' . $this->keys['option_group'] . '[' . $option_key . ']" value="1" ' . checked( 1, isset($options[ $section ][ $option_key ]) ? $options[ $section ][ $option_key ] : 0, false ) . '></input>';
 		$html .= '<span class="nsr-switch-label" data-on="On" data-off="Off"></span>';
 		$html .= '<span class="nsr-switch-handle"></span>';
 		$html .= '</label>';
@@ -444,7 +444,7 @@ class nsr_settings {
 		$html .= '<select title="' . $title . '" name="' . $this->keys['option_group'] . '[' . $option_key . ']" class="floating-element fancy-select nsr-fancy-select nsr-input-select" id="' . $option_key . '">';
 		foreach( $select_values as $value ) {
 
-			$html .= '<option value="' . $value . '"' . selected( $options[ $option_key ], $value, FALSE ) . '>' . $value . '</option>';
+			$html .= '<option value="' . $value . '"' . selected( $options[ $option_key ], $value, false ) . '>' . $value . '</option>';
 		}
 		$html .= '</select>';
 		$html .= '</p>';

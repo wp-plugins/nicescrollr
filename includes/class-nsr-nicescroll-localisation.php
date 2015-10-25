@@ -103,7 +103,7 @@ class nsr_nicescroll_localisation {
 	 */
 	public function get_nicescroll_configuration( $view ) {
 
-		if( FALSE !== get_option( $this->keys['option_group'] ) ) {
+		if( false !== get_option( $this->keys['option_group'] ) ) {
 
 			$options = get_option( $this->keys['option_group'] );
 		} else {

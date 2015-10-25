@@ -255,7 +255,7 @@ class nsr_menu {
 					plugin_dir_url( __FILE__ ) . '../../vendor/backtop/jquery.backTop.min.js',
 					array( 'jquery' ),
 					$this->keys['plugin_version'],
-					FALSE
+					false
 				);
 			}
 
@@ -268,7 +268,7 @@ class nsr_menu {
 					plugin_dir_url( __FILE__ ) . '../../vendor/scrollto/jquery.scrollTo.min.js',
 					array( 'jquery' ),
 					$this->keys['plugin_version'],
-					FALSE
+					false
 				);
 			}
 
@@ -281,7 +281,7 @@ class nsr_menu {
 				plugin_dir_url( __FILE__ ) . '../../vendor/fancy-select/fancySelect.js',
 				array( 'jquery' ),
 				$this->keys['plugin_version'],
-				FALSE
+				false
 			);
 
 			// Loads only on the "plugin settings" tab.
@@ -293,7 +293,7 @@ class nsr_menu {
 					plugin_dir_url( __FILE__ ) . '../../vendor/alertify/alertify.js',
 					array( 'jquery' ),
 					$this->keys['plugin_version'],
-					FALSE
+					false
 				);
 
 				// Ajax Reset Functionality.
@@ -305,7 +305,7 @@ class nsr_menu {
 						$this->keys['plugin_name'] . '-inc-alertify-js',
 					),
 					$this->keys['plugin_version'],
-					FALSE
+					false
 				);
 			}
 
@@ -317,11 +317,11 @@ class nsr_menu {
 					'jquery',
 					'wp-color-picker',
 					$this->keys['plugin_name'] . '-inc-fancy-select-js',
-					FALSE !== $option['plugin']['backtop_enabled'] ? $this->keys['plugin_name'] . '-inc-backtop-min-js' : NULL,
-					FALSE !== $option['plugin']['scrollto_enabled'] ? $this->keys['plugin_name'] . '-inc-scrollto-min-js' : NULL,
+					false !== $option['plugin']['backtop_enabled'] ? $this->keys['plugin_name'] . '-inc-backtop-min-js' : NULL,
+					false !== $option['plugin']['scrollto_enabled'] ? $this->keys['plugin_name'] . '-inc-scrollto-min-js' : NULL,
 				),
 				$this->keys['plugin_version'],
-				FALSE
+				false
 			);
 		}
 	}
@@ -521,7 +521,7 @@ class nsr_menu {
 	public function admin_notice_display() {
 
 		// If there are any error-related transients
-		if( FALSE !== get_transient( $this->keys['validation_transient'] ) ) {
+		if( false !== get_transient( $this->keys['validation_transient'] ) ) {
 
 			// Retrieves the error-array and the corresponding meta data
 			$errors = get_transient( $this->keys['validation_transient'] );
@@ -592,7 +592,7 @@ class nsr_menu {
 			$settings_section = $_REQUEST['section'];
 
 			// Resets the requested section.
-			if( TRUE === $this->Options->reset_settings( $settings_section ) ) {
+			if( true === $this->Options->reset_settings( $settings_section ) ) {
 
 				$response = array(
 					'success' => __( "All done! Please refresh the page for the settings to take effect.", $this->keys['plugin_domain'] ),
@@ -608,7 +608,7 @@ class nsr_menu {
 		} else {
 
 			// Resets all sections.
-			if( TRUE === $this->Options->reset_settings() ) {
+			if( true === $this->Options->reset_settings() ) {
 
 				$response = array(
 					'success' => __( "All done! Please refresh the page for the settings to take effect.", $this->keys['plugin_domain'] ),

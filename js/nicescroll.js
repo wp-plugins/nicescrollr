@@ -244,7 +244,7 @@
 	$( document ).ready( function(){
 
 		// Let's roll
-		if( GlobalOptions.defaultScrollbar){
+		if( GlobalOptions.defaultScrollbar ){
 			var nice = html.niceScroll( config );
 			// Hides the rail and the scrollbar.
 			nice.hide();

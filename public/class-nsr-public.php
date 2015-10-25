@@ -114,13 +114,23 @@ class nsr_public {
 	 */
 	public function enqueue_scripts() {
 
+		// Here we check if a plugin called "cbParallax" is enabled and is set to preserve scrolling.
+		// If so, we bail and let that plugin handle the scrolling behaviour on the frontend for consistent results. Developer's choice.
+		// So, then here we (may) get a transient from "cbParallax". If  true, no nicescroll js-library will be loaded by Nicescrollr.
+		$is_superseeded_by_cb_parallax_preserve_scrolling = get_transient( 'cb_parallax_superseeds_nicescrollr_plugin_on_frontend' );
+		delete_transient( 'cb_parallax_superseeds_nicescrollr_plugin_on_frontend' );
+		if( isset( $is_superseeded_by_cb_parallax_preserve_scrolling ) && true === $is_superseeded_by_cb_parallax_preserve_scrolling ) {
+
+			return;
+		}
+
 		$option = get_option( $this->keys['option_group'] );
 
 		// We only enqueue these scripts if Nicescroll is enabled in the frontend.
 		if( isset($option[ $this->view ]['enabled']) && $option[ $this->view ]['enabled'] ) {
 
 			// Checks which "version" of nicescroll to load.
-			if( isset( $option[ $this->view ]['defaultScrollbar']) && $option[ $this->view ]['defaultScrollbar'] ) {
+			if( isset($option[ $this->view ]['defaultScrollbar']) && $option[ $this->view ]['defaultScrollbar'] ) {
 
 				// NSR Nicescroll library
 				wp_enqueue_script(
@@ -130,7 +140,7 @@ class nsr_public {
 						'jquery',
 					),
 					$this->keys['plugin_version'],
-					TRUE
+					true
 				);
 			} else {
 				// Nicescroll library
@@ -141,7 +151,7 @@ class nsr_public {
 						'jquery',
 					),
 					$this->keys['plugin_version'],
-					TRUE
+					true
 				);
 			}
 
@@ -154,7 +164,7 @@ class nsr_public {
 					$this->keys['plugin_name'] . '-inc-nicescroll-min-js',
 				),
 				$this->keys['plugin_version'],
-				TRUE
+				true
 			);
 		}
 	}
