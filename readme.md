@@ -25,7 +25,7 @@ This plugin brings the "Nicescroll" scrollbar to your website. You can use it on
 
 == Requirements ==
 
-Nope.
+- PHP 5.4 or above
 
 == Installation ==
 
